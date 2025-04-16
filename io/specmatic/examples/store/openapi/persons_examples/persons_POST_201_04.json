@@ -7,7 +7,7 @@
     },
     "body": {
       "name": "Rahul Shah",
-      "age": "35",
+      "age": 35,
       "height": 1.78,
       "weight": 80.5,
       "isStudent": true,

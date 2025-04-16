@@ -10,7 +10,7 @@
       "age": 35,
       "height": 1.78,
       "weight": 80.5,
-      "isStudent": "Lead",
+      "isStudent": false,
       "email": "joel.rosario@example.com"
     }
   },
