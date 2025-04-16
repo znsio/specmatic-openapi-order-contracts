@@ -4,10 +4,6 @@
 
 Please see **[Documentation](https://specmatic.io/documentation/central_contract_repository.html)**
 
-## Backward Compatibility Testing
-
-Backward compatibility between API specifications is now automatically checked using our GitHub Actions workflow. This ensures that changes in your branch are compatible with the main branch before merging.
-
 ### How it works:
 
 1. When you push changes to a branch or create a pull request targeting the main branch, the CI workflow is triggered.
