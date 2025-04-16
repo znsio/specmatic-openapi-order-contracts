@@ -1,30 +1,31 @@
 # Central Contract Repository for the Order API
 
-## Overview
+## What is Central Contract Repository?
 
-This repository serves as the Central Contract Repository for API Specifications / Contracts, primarily focusing on OpenAPI specifications. It includes functionality to validate and identify duplicate examples in the OpenAPI contracts.
+Please see **[Documentation](https://specmatic.io/documentation/central_contract_repository.html)**
 
-## Key Features
+## Backward Compatibility Testing
 
-- **Duplicate Example Detection**: Automatically checks for duplicate examples in OpenAPI specifications located in the `io/specmatic/examples/store/openapi` directory.
-- **CI Integration**: Warnings for duplicate examples are displayed during merge commits via the GitHub Actions workflow defined in `.github/workflows/pull_request_merge_checks.yaml`.
+Backward compatibility between API specifications is now automatically checked using our GitHub Actions workflow. This ensures that changes in your branch are compatible with the main branch before merging.
 
-## How It Works
+### How it works:
 
-1. **Validation Process**:
-    - The workflow runs on every `push` or `pull_request` to the `main` branch.
-    - It validates OpenAPI examples using the `znsio/specmatic-openapi` Docker image.
-    - Duplicate examples in the OpenAPI specifications are identified, and warnings are displayed in the CI logs.
+1. When you push changes to a branch or create a pull request targeting the main branch, the CI workflow is triggered.
+2. The workflow identifies changed API specification files (YAML, JSON, and GraphQL).
+3. For changed OpenAPI specifications, it runs a backward compatibility check using the Specmatic.
+4. For changed GraphQL schemas, it performs a similar check using the Specmatic GraphQL.
 
-2. **Specifications Directory**:
-    - All OpenAPI specifications are located in the `io/specmatic/examples/store/openapi` directory.
+## Linting
 
-3. **Documentation**:
-    - For more details on identifying duplicate examples, refer to the [Specmatic Documentation](https://docs.specmatic.io/documentation/external_examples.html#identifying-duplicate-examples).
+Below are the instructions to run the linter on your local machine
 
-## Running Locally
+* Install [spectral](https://github.com/stoplightio/spectral#-installation-and-usage)
+* Run below command inside the repo
+```
+spectral lint **/*.yaml 
+```
+* Above command leverages .spectral.yaml
 
-To validate OpenAPI examples locally, you can use the following command:
+## Competing examples detection 
 
-```bash
-docker run -v "$(pwd):/repo:rw" znsio/specmatic-openapi examples validate --specs-dir=/repo/io/specmatic/examples/store/openapi
+Automatically checks for competing examples in OpenAPI specifications located in the `io/specmatic/examples/store/openapi` directory.
