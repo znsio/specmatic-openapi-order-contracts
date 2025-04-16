@@ -13,7 +13,7 @@ paths:
             schema:
               $ref: "#/components/schemas/PersonInput"
             examples:
-              vip-person-example-01:
+              inlined_vip_persons_POST_201_01-response-11111111:
                 value:
                   name: John Doe
                   age: 35
@@ -21,7 +21,7 @@ paths:
                   weight: 80.5
                   isStudent: true
                   email: john.doe@example.com
-              vip-person-example-01-copy:
+              inlined_vip_persons_POST_201_01-response-11111112:
                 value:
                   name: John Doe
                   age: 35
@@ -29,7 +29,7 @@ paths:
                   weight: 80.5
                   isStudent: true
                   email: john.doe@example.com
-              vip-person-example-02:
+              inlined_vip_persons_POST_201_02:
                 value:
                   name: Naresh Jain
                   age: 35
@@ -45,13 +45,13 @@ paths:
               schema:
                 $ref: "#/components/schemas/PersonResponse"
               examples:
-                vip-person-example-01:
+                inlined_vip_persons_POST_201_01-response-11111111:
                   value:
                     id: 11111111
-                vip-person-example-01-copy:
+                inlined_vip_persons_POST_201_01-response-11111112:
                   value:
                     id: 11111112
-                vip-person-example-02:
+                inlined_vip_persons_POST_201_02:
                   value:
                     id: 22222222
   /persons:
@@ -63,7 +63,7 @@ paths:
             schema:
               $ref: "#/components/schemas/PersonInput"
             examples:
-              person-example-01:
+              inlined_persons_POST_201_01-response-1111:
                 value:
                   name: John Doe
                   age: 35
@@ -71,7 +71,7 @@ paths:
                   weight: 80.5
                   isStudent: true
                   email: john.doe@example.com
-              person-example-01-copy:
+              inlined_persons_POST_201_01-response-1112:
                 value:
                   name: John Doe
                   age: 35
@@ -79,7 +79,7 @@ paths:
                   weight: 80.5
                   isStudent: true
                   email: john.doe@example.com
-              person-example-02:
+              inlined_persons_POST_201_02:
                 value:
                   name: Naresh Jain
                   age: 35
@@ -95,13 +95,13 @@ paths:
               schema:
                 $ref: "#/components/schemas/PersonResponse"
               examples:
-                person-example-01:
+                inlined_persons_POST_201_01-response-1111:
                   value:
                     id: 1111
-                person-example-01-copy:
+                inlined_persons_POST_201_01-response-1112:
                   value:
                     id: 1112
-                person-example-02:
+                inlined_persons_POST_201_02:
                   value:
                     id: 2222
     get:

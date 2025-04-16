@@ -6,12 +6,12 @@
       "Content-Type": "application/json"
     },
     "body": {
-      "name": "Kaushal Vora",
+      "name": "Krutin Chaturvedi",
       "age": 35,
       "height": 1.78,
       "weight": 80.5,
       "isStudent": true,
-      "email": "kaushal.vora@example.com"
+      "email": "krutin.chaturvedi@example.com"
     }
   },
   "http-response": {
@@ -21,7 +21,7 @@
       "Content-Type": "application/json"
     },
     "body": {
-      "id": 2
+      "id": 61
     }
   }
 }

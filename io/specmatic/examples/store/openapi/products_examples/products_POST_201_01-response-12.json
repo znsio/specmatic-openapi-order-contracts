@@ -1,27 +1,23 @@
 {
   "http-request": {
+    "path": "/products",
     "method": "POST",
-    "path": "/persons",
     "headers": {
       "Content-Type": "application/json"
     },
     "body": {
-      "name": "Krutin Chaturvedi",
-      "age": 35,
-      "height": 1.78,
-      "weight": 80.5,
-      "isStudent": true,
-      "email": "krutin.chaturvedi@example.com"
+      "name": "Treasure Island",
+      "type": "book",
+      "inventory": 100
     }
   },
   "http-response": {
     "status": 201,
-    "status-text": "Created",
     "headers": {
       "Content-Type": "application/json"
     },
     "body": {
-      "id": 33
+      "id": 12
     }
   }
 }

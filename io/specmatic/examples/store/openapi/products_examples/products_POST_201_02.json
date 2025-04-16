@@ -2,13 +2,13 @@
   "http-request": {
     "path": "/products",
     "method": "POST",
-    "headers": {
-      "Content-Type": "application/json"
-    },
     "body": {
-      "name": "Treasure Island",
+      "name": "(string)",
       "type": "book",
       "inventory": 100
+    },
+    "headers": {
+      "Content-Type": "application/json"
     }
   },
   "http-response": {
@@ -17,7 +17,7 @@
       "Content-Type": "application/json"
     },
     "body": {
-      "id": 22
+      "id": 21
     }
   }
 }

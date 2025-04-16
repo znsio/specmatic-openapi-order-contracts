@@ -6,12 +6,12 @@
       "Content-Type": "application/json"
     },
     "body": {
-      "name": "Krutin Chaturvedi",
+      "name": "Joel Rosario",
       "age": 35,
       "height": 1.78,
       "weight": 80.5,
       "isStudent": true,
-      "email": "krutin.chaturvedi@example.com"
+      "email": "joel.rosario@example.com"
     }
   },
   "http-response": {
@@ -21,7 +21,7 @@
       "Content-Type": "application/json"
     },
     "body": {
-      "id": 33
+      "id": 51
     }
   }
 }

@@ -42,7 +42,7 @@ paths:
             schema:
               $ref: "#/components/schemas/ProductDetails"
             examples:
-              CreateProduct:
+              inlined_products_POST_201_01-response-111111:
                 summary: Treasure Island
                 value:
                   name: "Treasure Island"
@@ -56,7 +56,7 @@ paths:
               schema:
                 $ref: "#/components/schemas/ProductId"
               examples:
-                CreateProduct:
+                inlined_products_POST_201_01-response-111111:
                   summary: Product Id
                   value:
                     id: 111111
