@@ -1,0 +1,16 @@
+{
+  "http-request": {
+    "method": "PATCH",
+    "path": "/employees",
+    "body": {
+      "name": "Jamie",
+      "employeeCode": "pqrxyz"
+    }
+  },
+  "http-response": {
+    "status": 400,
+    "body": {
+      "message": "Invalid value"
+    }
+  }
+}

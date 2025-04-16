@@ -1,0 +1,20 @@
+{
+  "http-request": {
+    "method": "PATCH",
+    "path": "/employees",
+    "body": {
+      "name": "Jamie",
+      "employeeCode": "pqrxyz"
+    }
+  },
+  "http-response": {
+    "status": 200,
+    "body": {
+      "id": 10,
+      "employeeCode": "pqrxyz",
+      "name": "Jamie",
+      "department": "(string)",
+      "designation": "(string)"
+    }
+  }
+}
