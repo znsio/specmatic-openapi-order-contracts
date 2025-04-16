@@ -13,7 +13,7 @@ paths:
             schema:
               $ref: "#/components/schemas/PersonInput"
             examples:
-              vip_persons_POST_201_01-with-response-id-11111111:
+              vip_persons_POST_201-with-response-id-11111111:
                 value:
                   name: John Doe
                   age: 35
@@ -21,7 +21,7 @@ paths:
                   weight: 80.5
                   isStudent: true
                   email: john.doe@example.com
-              vip_persons_POST_201_01-with-response-id-11111112:
+              vip_persons_POST_201-with-response-id-11111112:
                 value:
                   name: John Doe
                   age: 35
@@ -45,10 +45,10 @@ paths:
               schema:
                 $ref: "#/components/schemas/PersonResponse"
               examples:
-                vip_persons_POST_201_01-with-response-id-11111111:
+                vip_persons_POST_201-with-response-id-11111111:
                   value:
                     id: 11111111
-                vip_persons_POST_201_01-with-response-id-11111112:
+                vip_persons_POST_201-with-response-id-11111112:
                   value:
                     id: 11111112
                 vip_persons_POST_201_02:
@@ -63,7 +63,7 @@ paths:
             schema:
               $ref: "#/components/schemas/PersonInput"
             examples:
-              persons_POST_201_01-with-response-id-1111:
+              persons_POST_201-with-response-id-1111:
                 value:
                   name: John Doe
                   age: 35
@@ -71,7 +71,7 @@ paths:
                   weight: 80.5
                   isStudent: true
                   email: john.doe@example.com
-              persons_POST_201_01-with-response-id-1112:
+              persons_POST_201-with-response-id-1112:
                 value:
                   name: John Doe
                   age: 35
@@ -95,10 +95,10 @@ paths:
               schema:
                 $ref: "#/components/schemas/PersonResponse"
               examples:
-                persons_POST_201_01-with-response-id-1111:
+                persons_POST_201-with-response-id-1111:
                   value:
                     id: 1111
-                persons_POST_201_01-with-response-id-1112:
+                persons_POST_201-with-response-id-1112:
                   value:
                     id: 1112
                 persons_POST_201_02:

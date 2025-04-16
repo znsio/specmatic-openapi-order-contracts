@@ -6,12 +6,12 @@
       "Content-Type": "application/json"
     },
     "body": {
-      "name": "Rahul Shah",
+      "name": "Joel Rosario",
       "age": 35,
       "height": 1.78,
       "weight": 80.5,
-      "isStudent": true,
-      "email": "rahul.shah@example.com"
+      "isStudent": false,
+      "email": "joel.rosario@example.com"
     }
   },
   "http-response": {
@@ -21,7 +21,7 @@
       "Content-Type": "application/json"
     },
     "body": {
-      "id": 21
+      "id": 31
     }
   }
 }
