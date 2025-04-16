@@ -21,6 +21,16 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Get changed yaml files
+        id: changed-files-specific
+        uses: tj-actions/changed-files@v34
+        with:
+          files: |
+            io/**/*.yaml
+            io/**/*.yml
+            io/**/*.json
+          files_ignore: kafka.yaml
+
       - name: Create environment file
         run: |
             # echo "GITHUB_REF=${{ github.ref }}" >> env.list
@@ -40,3 +50,11 @@ jobs:
           docker run -v "$(pwd):/repo:rw" \
             --env-file env.list \
             znsio/specmatic examples validate --specs-dir=/repo/io/specmatic/examples/store/openapi
+
+      - name: Run OpenAPI backward compatibility check on changed files
+        if: steps.changed-files-specific.outputs.any_changed == 'true'
+        run: |
+          docker run -v "$(pwd):/repo:rw" \
+            --env-file env.list \
+            --user $(id -u):$(id -g) \
+            znsio/specmatic backward-compatibility-check --repo-dir=/repo --base-branch=origin/main
