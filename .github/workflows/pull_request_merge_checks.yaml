@@ -60,5 +60,5 @@ jobs:
         run: |
           docker run -v "$(pwd):/repo:rw" \
             --env-file env.list \
-            znsio/specmatic examples validate --specs-dir=/repo/io/specmatic/examples/store/openapi
+            znsio/specmatic-openapi examples validate --specs-dir=/repo/io/specmatic/examples/store/openapi
 
