@@ -21,16 +21,6 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Get changed yaml files
-        id: changed-files-specific
-        uses: tj-actions/changed-files@v34
-        with:
-          files: |
-            io/**/*.yaml
-            io/**/*.yml
-            io/**/*.json
-          files_ignore: kafka.yaml
-
       - name: Create environment file
         run: |
             # echo "GITHUB_REF=${{ github.ref }}" >> env.list
