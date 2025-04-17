@@ -7,13 +7,6 @@ paths:
   /info:
     get:
       summary: Get information about the service
-      parameters:
-        - in: header
-          name: mode
-          required: false
-          schema:
-            type: string
-          description: Optional mode parameter
       responses:
         "200":
           description: Successful response
@@ -84,6 +77,12 @@ paths:
             type: integer
             format: int32
           description: Filter persons by age
+        - in: header
+          name: Trace-ID
+          required: false
+          schema:
+            type: string
+          description: Optional Trace-Id header
       responses:
         "200":
           description: Successful response
@@ -127,6 +126,8 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Person"
+        "404":
+          description: Not found
     patch:
       summary: Update a person
       parameters:
@@ -181,8 +182,8 @@ paths:
       responses:
         "204":
           description: Successfully deleted
-        "400":
-          description: Bad Request
+        "404":
+          description: Not found
 
 components:
   schemas:
