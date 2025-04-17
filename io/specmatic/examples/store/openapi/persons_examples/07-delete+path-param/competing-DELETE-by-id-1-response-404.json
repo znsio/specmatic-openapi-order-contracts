@@ -4,7 +4,7 @@
     "path": "/persons/1"
   },
   "http-response": {
-    "status": 400,
-    "status-text": "Bad Request"
+    "status": 404,
+    "status-text": "Not found"
   }
 }
