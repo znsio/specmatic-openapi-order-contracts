@@ -4,10 +4,6 @@
 
 Please see **[Documentation](https://specmatic.io/documentation/central_contract_repository.html)**
 
-## Backward Compatibility Testing
-
-Backward compatibility between API specifications is now automatically checked using our GitHub Actions workflow. This ensures that changes in your branch are compatible with the main branch before merging.
-
 ### How it works:
 
 1. When you push changes to a branch or create a pull request targeting the main branch, the CI workflow is triggered.
@@ -28,4 +24,10 @@ spectral lint **/*.yaml
 
 ## Competing examples detection 
 
-Automatically checks for competing examples in OpenAPI specifications located in the `io/specmatic/examples/store/openapi` directory.
+Running below command checks for competing examples in OpenAPI specifications located in the `io/specmatic/examples/store/openapi` directory.
+
+```
+docker run -v "$(pwd):/repo:rw" \
+  --env-file env.list \
+  znsio/specmatic-openapi examples validate --specs-dir=/repo/io/specmatic/examples/store/openapi
+```
