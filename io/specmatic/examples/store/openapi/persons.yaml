@@ -1,0 +1,259 @@
+openapi: 3.0.0
+info:
+  title: Persons Example
+  version: 1.0.0
+
+paths:
+  /info:
+    get:
+      summary: Get information about the service
+      parameters:
+        - in: header
+          name: mode
+          required: false
+          schema:
+            type: string
+          description: Optional mode parameter
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  title:
+                    type: string
+                  version:
+                    type: string
+              example:
+                title: Persons Example
+                version: 1.0.0
+  /persons:
+    post:
+      summary: Create a person
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/PersonInput"
+            examples:
+              details-of-john-POST_201-with-id-1111:
+                value:
+                  name: John Doe
+                  age: 35
+                  height: 1.78
+                  weight: 80.5
+                  isStudent: true
+                  email: john.doe@example.com
+              details-of-naresh-POST_201-with-id-2222:
+                value:
+                  name: Naresh Jain
+                  age: 35
+                  height: 1.78
+                  weight: 80.5
+                  isStudent: true
+                  email: naresh.jain@example.com
+      responses:
+        "201":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PersonResponse"
+              examples:
+                details-of-john-POST_201-with-id-1111:
+                  value:
+                    id: 1111
+                details-of-naresh-POST_201-with-id-2222:
+                  value:
+                    id: 2222
+    get:
+      summary: Get all persons
+      parameters:
+        - in: query
+          name: name
+          required: false
+          schema:
+            type: string
+          description: Filter persons by name
+        - in: query
+          name: age
+          required: false
+          schema:
+            type: integer
+            format: int32
+          description: Filter persons by age
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Person"
+              examples:
+                person-list-example:
+                  value:
+                    - id: 1
+                      name: John Doe
+                      age: 35
+                      height: 1.78
+                      weight: 80.5
+                      isStudent: true
+                      email: john.doe@example.com
+                    - id: 2
+                      name: Jane Smith
+                      age: 28
+                      height: 1.65
+                      weight: 60.0
+                      isStudent: false
+                      email: jane.smith@example.com
+  /persons/{id}:
+    get:
+      summary: Get a person by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+            format: int32
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Person"
+    patch:
+      summary: Update a person
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+            format: int32
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/PersonUpdate"
+            examples:
+              PATCH_200_example:
+                value:
+                  name: "Updated Name"
+                  age: 36
+      responses:
+        "200":
+          description: Successfully updated
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Person"
+              examples:
+                PATCH_200_example:
+                  value:
+                    id: 1
+                    name: "Updated Name"
+                    age: 36
+                    height: 1.78
+                    weight: 80.5
+                    isStudent: true
+                    email: "john.doe@example.com"
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+    delete:
+      summary: Delete a person
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+            format: int32
+      responses:
+        "204":
+          description: Successfully deleted
+        "400":
+          description: Bad Request
+
+components:
+  schemas:
+    PersonInput:
+      type: object
+      properties:
+        name:
+          type: string
+        age:
+          type: integer
+          format: int32
+        height:
+          type: number
+          format: float
+        weight:
+          type: number
+          format: double
+        isStudent:
+          type: boolean
+        email:
+          type: string
+          format: email
+    PersonResponse:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+    Person:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        name:
+          type: string
+        age:
+          type: integer
+          format: int32
+        height:
+          type: number
+          format: float
+        weight:
+          type: number
+          format: double
+        isStudent:
+          type: boolean
+        email:
+          type: string
+          format: email
+    PersonUpdate:
+      type: object
+      properties:
+        name:
+          type: string
+        age:
+          type: integer
+          format: int32
+        height:
+          type: number
+          format: float
+        weight:
+          type: number
+          format: double
+        isStudent:
+          type: boolean
+        email:
+          type: string
+          format: email
+    Error:
+      type: object
+      properties:
+        message:
+          type: string
