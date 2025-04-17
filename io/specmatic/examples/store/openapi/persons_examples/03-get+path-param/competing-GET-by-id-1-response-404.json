@@ -1,0 +1,13 @@
+{
+  "http-request": {
+    "method": "GET",
+    "path": "/persons/1",
+    "headers": {
+      "Accept": "application/json"
+    }
+  },
+  "http-response": {
+    "status": 404,
+    "status-text": "Not found"
+  }
+}
