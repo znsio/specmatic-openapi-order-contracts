@@ -127,6 +127,8 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Person"
+        "404":
+          description: Not found
     patch:
       summary: Update a person
       parameters:
