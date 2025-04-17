@@ -1,0 +1,10 @@
+{
+  "http-request": {
+    "method": "DELETE",
+    "path": "/persons/1"
+  },
+  "http-response": {
+    "status": 400,
+    "status-text": "Bad Request"
+  }
+}

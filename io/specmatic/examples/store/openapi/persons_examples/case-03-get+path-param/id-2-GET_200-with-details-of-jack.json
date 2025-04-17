@@ -1,0 +1,25 @@
+{
+  "http-request": {
+    "method": "GET",
+    "path": "/persons/2",
+    "headers": {
+      "Accept": "application/json"
+    }
+  },
+  "http-response": {
+    "status": 200,
+    "status-text": "OK",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "id": 2,
+      "name": "Jack Smith",
+      "age": 35,
+      "height": 1.78,
+      "weight": 80.5,
+      "isStudent": true,
+      "email": "jack.smith@example.com"
+    }
+  }
+}
