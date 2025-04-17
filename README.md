@@ -24,4 +24,10 @@ spectral lint **/*.yaml
 
 ## Competing examples detection 
 
-Automatically checks for competing examples in OpenAPI specifications located in the `io/specmatic/examples/store/openapi` directory.
+Running below command checks for competing examples in OpenAPI specifications located in the `io/specmatic/examples/store/openapi` directory.
+
+```
+docker run -v "$(pwd):/repo:rw" \
+  --env-file env.list \
+  znsio/specmatic-openapi examples validate --specs-dir=/repo/io/specmatic/examples/store/openapi
+```
