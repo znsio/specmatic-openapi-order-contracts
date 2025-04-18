@@ -115,24 +115,24 @@ paths:
               schema:
                 $ref: "#/components/schemas/Person"
               examples:
-                competing-GET-by-id-1-response-200-with-details-of-john:
+                competing-GET-by-id-1-response-200-with-details-of-jane:
                   value:
                     id: 1
-                    name: John Doe
-                    age: 35
-                    height: 1.78
-                    weight: 80.5
-                    isStudent: true
-                    email: john.doe@example.com
-                not-competing-GET-by-id-5-response-200-with-details-of-jane:
-                  value:
-                    id: 5
                     name: Jane Smith
                     age: 28
                     height: 1.65
                     weight: 60.0
                     isStudent: false
                     email: jane.smith@example.com
+                not-competing-GET-by-id-5-response-200-with-details-of-naresh:
+                  value:
+                    id: 5
+                    name: Naresh Jain
+                    age: 35
+                    height: 1.78
+                    weight: 80.5
+                    isStudent: true
+                    email: naresh.jain@example.com
         "404":
           description: Not found
     patch:
