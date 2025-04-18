@@ -1,10 +1,7 @@
 {
   "http-request": {
     "method": "GET",
-    "path": "/persons/1",
-    "headers": {
-      "Accept": "application/json"
-    }
+    "path": "/persons/1"
   },
   "http-response": {
     "status": 404,
