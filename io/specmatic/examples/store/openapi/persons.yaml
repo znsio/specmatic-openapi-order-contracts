@@ -104,9 +104,11 @@ paths:
             format: int32
           examples:
             competing-GET-by-id-1-response-200-with-details-of-john:
-              value: 1
+              value:
+                id: 1
             not-competing-GET-by-id-5-response-200-with-details-of-jane:
-              value: 5
+              value:
+                id: 5
       responses:
         "200":
           description: Successful response
