@@ -31,7 +31,7 @@ paths:
             schema:
               $ref: "#/components/schemas/PersonInput"
             examples:
-              details-of-john-POST_201-with-id-1111:
+              competing-POST-details-of-john-response-201-with-id-1111.json:
                 value:
                   name: John Doe
                   age: 35
@@ -39,7 +39,7 @@ paths:
                   weight: 80.5
                   isStudent: true
                   email: john.doe@example.com
-              details-of-naresh-POST_201-with-id-2222:
+              not-competing-POST-details-of-naresh-response-201-with-id-2222.json:
                 value:
                   name: Naresh Jain
                   age: 35
@@ -55,10 +55,10 @@ paths:
               schema:
                 $ref: "#/components/schemas/PersonResponse"
               examples:
-                details-of-john-POST_201-with-id-1111:
+                competing-POST-details-of-john-response-201-with-id-1111.json:
                   value:
                     id: 1111
-                details-of-naresh-POST_201-with-id-2222:
+                not-competing-POST-details-of-naresh-response-201-with-id-2222.json:
                   value:
                     id: 2222
     get:
@@ -92,23 +92,6 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/Person"
-              examples:
-                person-list-example:
-                  value:
-                    - id: 1
-                      name: John Doe
-                      age: 35
-                      height: 1.78
-                      weight: 80.5
-                      isStudent: true
-                      email: john.doe@example.com
-                    - id: 2
-                      name: Jane Smith
-                      age: 28
-                      height: 1.65
-                      weight: 60.0
-                      isStudent: false
-                      email: jane.smith@example.com
   /persons/{id}:
     get:
       summary: Get a person by ID
@@ -119,6 +102,11 @@ paths:
           schema:
             type: integer
             format: int32
+          examples:
+            competing-GET-by-id-1-response-200-with-details-of-john:
+              value: 1
+            not-competing-GET-by-id-5-response-200-with-details-of-jane:
+              value: 5
       responses:
         "200":
           description: Successful response
@@ -126,6 +114,25 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Person"
+              examples:
+                competing-GET-by-id-1-response-200-with-details-of-john:
+                  value:
+                    id: 1
+                    name: John Doe
+                    age: 35
+                    height: 1.78
+                    weight: 80.5
+                    isStudent: true
+                    email: john.doe@example.com
+                not-competing-GET-by-id-5-response-200-with-details-of-jane:
+                  value:
+                    id: 5
+                    name: Jane Smith
+                    age: 28
+                    height: 1.65
+                    weight: 60.0
+                    isStudent: false
+                    email: jane.smith@example.com
         "404":
           description: Not found
     patch:
