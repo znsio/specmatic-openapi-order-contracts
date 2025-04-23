@@ -55,8 +55,14 @@ jobs:
               echo "GITHUB_BASE_REF=${{ github.base_ref }}" >> env.list
             fi     
 
-      - name: Validate OpenAPI examples
+      - name: Validate OpenAPI examples - Lenient check for duplicate examples
         run: |
           docker run -v "$(pwd):/repo:rw" \
             --env-file env.list \
-            znsio/specmatic-openapi examples validate --specs-dir=/repo/io/specmatic/examples/store/openapi
+            ghcr.io/znsio/specmatic-openapi:0.4.1-snapshot examples validate --specs-dir=/repo/io/specmatic/examples/store/openapi --duplicate-example-detection-check=lenient
+
+      - name: Validate OpenAPI examples - Strict check (default mode) for duplicate examples
+        run: |
+          docker run -v "$(pwd):/repo:rw" \
+            --env-file env.list \
+            ghcr.io/znsio/specmatic-openapi:0.4.1-snapshot examples validate --specs-dir=/repo/io/specmatic/examples/store/openapi
