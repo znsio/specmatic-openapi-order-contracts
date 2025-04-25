@@ -63,7 +63,7 @@ jobs:
         run: |
           docker run -v "$(pwd):/repo:rw" \
             --env-file env.list \
-            ghcr.io/znsio/specmatic-openapi:0.4.1-snapshot examples validate --specs-dir=/repo/io/specmatic/examples/store/openapi --duplicate-example-detection-check=lenient
+            znsio/specmatic-openapi:0.4.1 examples validate --specs-dir=/repo/io/specmatic/examples/store/openapi --competing-example-detection=LENIENT
 
       - name: Validate OpenAPI examples with strict check for duplicate examples (default)
         run: |
