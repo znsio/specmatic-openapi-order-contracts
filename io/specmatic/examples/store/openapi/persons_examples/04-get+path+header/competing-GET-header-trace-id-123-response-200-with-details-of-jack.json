@@ -1,0 +1,27 @@
+{
+  "http-request": {
+    "method": "GET",
+    "path": "/persons",
+    "headers": {
+      "Trace-ID": "123"
+    }
+  },
+  "http-response": {
+    "status": 200,
+    "status-text": "OK",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": [
+      {
+        "id": 3,
+        "name": "Jack Wilson",
+        "age": 30,
+        "height": 1.82,
+        "weight": 78.0,
+        "isStudent": false,
+        "email": "jack.wilson@example.com"
+      }
+    ]
+  }
+}

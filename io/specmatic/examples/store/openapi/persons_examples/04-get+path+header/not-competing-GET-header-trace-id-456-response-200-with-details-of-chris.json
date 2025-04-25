@@ -1,0 +1,27 @@
+{
+  "http-request": {
+    "method": "GET",
+    "path": "/persons",
+    "headers": {
+      "Trace-ID": "456"
+    }
+  },
+  "http-response": {
+    "status": 200,
+    "status-text": "OK",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": [
+      {
+        "id": 5,
+        "name": "Chris Evans",
+        "age": 35,
+        "height": 1.88,
+        "weight": 85.5,
+        "isStudent": false,
+        "email": "chris.evans@example.com"
+      }
+    ]
+  }
+}
