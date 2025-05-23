@@ -61,12 +61,12 @@ jobs:
 
       - name: Validate OpenAPI examples with lenient check for duplicate examples
         run: |
-          docker run -v "$(pwd):/repo:rw" \
+          docker run -v "$(pwd)/io/specmatic/examples/store/openapi:/spec:rw" \
             --env-file env.list \
-            znsio/specmatic-openapi:1.0.1 examples validate --specs-dir=/repo/io/specmatic/examples/store/openapi --competing-example-detection=LENIENT
+            znsio/specmatic-openapi:1.0.1 examples validate --specs-dir=/spec --competing-example-detection=LENIENT
 
       - name: Validate OpenAPI examples with strict check for duplicate examples (default)
         run: |
-          docker run -v "$(pwd):/repo:rw" \
+          docker run -v "$(pwd)/io/specmatic/examples/store/openapi:/spec:rw" \
             --env-file env.list \
-            znsio/specmatic-openapi:1.0.1 examples validate --specs-dir=/repo/io/specmatic/examples/store/openapi
+            znsio/specmatic-openapi:1.0.1 examples validate --specs-dir=/spec
