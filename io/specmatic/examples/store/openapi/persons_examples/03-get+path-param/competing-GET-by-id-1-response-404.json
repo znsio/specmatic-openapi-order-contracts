@@ -1,0 +1,10 @@
+{
+  "http-request": {
+    "method": "GET",
+    "path": "/persons/1"
+  },
+  "http-response": {
+    "status": 404,
+    "status-text": "Not found"
+  }
+}
