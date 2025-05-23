@@ -11,7 +11,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: Check Duplicate Examples
+    name: Check Examples With Competing Requests
     steps:
       - uses: actions/checkout@v4
         with:
