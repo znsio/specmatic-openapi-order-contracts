@@ -1,0 +1,29 @@
+{
+  "http-request": {
+    "method": "PATCH",
+    "path": "/persons/2",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "name": "Chris Gardner",
+      "age": 39
+    }
+  },
+  "http-response": {
+    "status": 200,
+    "status-text": "OK",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "id": 2,
+      "name": "Chris Gardner",
+      "age": 39,
+      "height": 1.65,
+      "weight": 60.0,
+      "isStudent": false,
+      "email": "chris@example.com"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "http-request": {
+    "method": "GET",
+    "path": "/persons",
+    "query": {
+      "age": "30"
+    }
+  },
+  "http-response": {
+    "status": 200,
+    "status-text": "OK",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": [
+      {
+        "id": 4,
+        "name": "John Smith",
+        "age": 30,
+        "height": 1.75,
+        "weight": 75.0,
+        "isStudent": false,
+        "email": "john.smith@example.com"
+      }
+    ]
+  }
+}

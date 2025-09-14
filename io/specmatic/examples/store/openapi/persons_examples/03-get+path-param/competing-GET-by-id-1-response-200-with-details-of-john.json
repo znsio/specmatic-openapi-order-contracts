@@ -1,0 +1,22 @@
+{
+  "http-request": {
+    "method": "GET",
+    "path": "/persons/1"
+  },
+  "http-response": {
+    "status": 200,
+    "status-text": "OK",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "id": 1,
+      "name": "John Doe",
+      "age": 35,
+      "height": 1.78,
+      "weight": 80.5,
+      "isStudent": true,
+      "email": "john.doe@example.com"
+    }
+  }
+}
